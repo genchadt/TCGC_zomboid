@@ -81,9 +81,9 @@ SandboxVars = {
     -- 7 = 2-6 Months
     ElecShut = 2,
     -- Minimum=-1 Maximum=2147483647 Default=14
-    WaterShutModifier = 16,
+    WaterShutModifier = -1,
     -- Minimum=-1 Maximum=2147483647 Default=14
-    ElecShutModifier = 16,
+    ElecShutModifier = -1,
     -- Default=Rare
     -- 1 = None (not recommended)
     -- 2 = Insanely Rare
@@ -256,7 +256,7 @@ SandboxVars = {
     -- 4 = Every Month
     LootRespawn = 2,
     -- When > 0, loot will not respawn in zones that have been visited within this number of in-game hours. Minimum=0 Maximum=2147483647 Default=0
-    SeenHoursPreventLootRespawn = 60,
+    SeenHoursPreventLootRespawn = 168,
     -- A comma-separated list of item types that will be removed after HoursForWorldItemRemoval hours.
     WorldItemRemovalList = "Base.Vest,Base.Shirt,Base.Blouse,Base.Skirt,Base.Shoes,Base.Hat,Base.Glasses,Base.Maggots,Base.Maggots2,Hydrocraft.HCZipperBag,Hydrocraft.HCMREcrackerstrash,Hydrocraft.HCMREmealprepedtrash,Hydrocraft.HCPurifyingtablets,Hydrocraft.HCMREFRH,Base.Brass22,Base.Brass57,Base.Brass380,Base.Brass9,Base.Brass38,Base.Brass357,Base.Brass45,Base.Brass45LC,Base.Brass44,Base.Brass4570,Base.Brass50MAG,Base.Hull410g,Base.Hull20g,Base.Hull12g,Base.Hull10g,Base.Hull4g,Base.Brass223,Base.Brass556,Base.Brass545x39,Base.Brass762x39,Base.Brass308,Base.Brass762x51,Base.Brass762x54r,Base.Brass3006,Base.Brass50BMG,EHE.EvacuationFlyer,EHE.EmergencyFlyer,EHE.QuarantineFlyer,EHE.PreventionFlyer,EHE.NoticeFlyer,Insurgent.DeployedParachute,CCW_FannyPack_22,CCW_FannyPack_357,CCW_FannyPack_380,CCW_FannyPack_45_2,CCW_FannyPack_45_1,CCW_FannyPack_22_9,CCW_Purse_22,CCW_Purse_357,CCW_Purse_380,CCW_Purse_45_2,CCW_Purse_45_1,CCW_Purse_9",
     -- Number of hours since an item was dropped on the ground before it is removed.  Items are removed the next time that part of the map is loaded.  Zero means items are not removed. Minimum=0.00 Maximum=2147483647.00 Default=24.00
@@ -497,154 +497,136 @@ SandboxVars = {
     MaggotSpawn = 1,
     -- The higher the value, the longer lightbulbs last before breaking. If 0, lightbulbs will never break. Does not affect vehicle headlights. Minimum=0.00 Maximum=1000.00 Default=1.00
     LightBulbLifespan = 100.0,
-    -- Minimum=1.00 Maximum=4.00 Default=1.60
-    lgd_antibodies_150_general_baseAntibodyGrowth = 1.38,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.00
-    lgd_antibodies_150_general_virusInfectionRecoveryEffect = 0.0,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.00
-    lgd_antibodies_150_general_virusMutationEffect = 0.0,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.01
-    lgd_antibodies_150_wounds_deepWounded = -0.01,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.02
-    lgd_antibodies_150_wounds_bleeding = -0.02,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.01
-    lgd_antibodies_150_wounds_bitten = -0.01,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.01
-    lgd_antibodies_150_wounds_cut = -0.008,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.00
-    lgd_antibodies_150_wounds_scratched = -0.003,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.01
-    lgd_antibodies_150_wounds_burnt = -0.005,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.01
-    lgd_antibodies_150_wounds_needBurnWash = -0.01,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.00
-    lgd_antibodies_150_wounds_stiched = -0.001,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.02
-    lgd_antibodies_150_wounds_haveBullet = -0.02,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.01
-    lgd_antibodies_150_wounds_haveGlass = -0.01,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.01
-    lgd_antibodies_150_infections_regular = -0.01,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.01
-    lgd_antibodies_150_infections_virusScratch = -0.01,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.02
-    lgd_antibodies_150_infections_virusCut = -0.02,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.03
-    lgd_antibodies_150_infections_virusBite = -0.03,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.20
-    lgd_antibodies_150_hygiene_bloodEffect = -0.2,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.10
-    lgd_antibodies_150_hygiene_dirtEffect = -0.1,
-    -- Minimum=0.00 Maximum=1.00 Default=0.30
-    lgd_antibodies_150_hygiene_modCleanBandage = 0.3,
-    -- Minimum=0.00 Maximum=1.00 Default=0.30
-    lgd_antibodies_150_hygiene_modSterilizedBandage = 0.3,
-    -- Minimum=0.00 Maximum=1.00 Default=0.30
-    lgd_antibodies_150_hygiene_modSterilizedWound = 0.3,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.85
-    lgd_antibodies_150_hygiene_modDeepWounded = -0.85,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.45
-    lgd_antibodies_150_hygiene_modBleeding = -0.45,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.40
-    lgd_antibodies_150_hygiene_modBitten = -0.4,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.20
-    lgd_antibodies_150_hygiene_modCut = -0.2,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.10
-    lgd_antibodies_150_hygiene_modScratched = -0.1,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.40
-    lgd_antibodies_150_hygiene_modBurnt = -0.4,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.60
-    lgd_antibodies_150_hygiene_modNeedBurnWash = -0.6,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.05
-    lgd_antibodies_150_hygiene_modStiched = -0.05,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.60
-    lgd_antibodies_150_hygiene_modHaveBullet = -0.6,
-    -- Minimum=-1.00 Maximum=0.00 Default=-0.40
-    lgd_antibodies_150_hygiene_modHaveGlass = -0.4,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.10
-    lgd_antibodies_150_moodles_bleeding = -0.1,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.04
-    lgd_antibodies_150_moodles_thirst = -0.04,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.03
-    lgd_antibodies_150_moodles_hungry = -0.03,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.02
-    lgd_antibodies_150_moodles_sick = -0.02,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.02
-    lgd_antibodies_150_moodles_hasACold = -0.02,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_pain = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_tired = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_endurance = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_panic = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_stress = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_unhappy = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_bored = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.01
-    lgd_antibodies_150_moodles_hyperthermia = 0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.10
-    lgd_antibodies_150_moodles_hypothermia = -0.1,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_windchill = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_wet = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_moodles_heavyLoad = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.01
-    lgd_antibodies_150_moodles_drunk = 0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.05
-    lgd_antibodies_150_moodles_foodEaten = 0.05,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_asthmatic = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_smoker = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.02
-    lgd_antibodies_150_traits_unfit = -0.02,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_outOfShape = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.01
-    lgd_antibodies_150_traits_athletic = 0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_slowHealer = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.01
-    lgd_antibodies_150_traits_fastHealer = 0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_proneToIllness = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.01
-    lgd_antibodies_150_traits_resilient = 0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.02
-    lgd_antibodies_150_traits_weak = -0.02,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_feeble = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.01
-    lgd_antibodies_150_traits_strong = 0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.02
-    lgd_antibodies_150_traits_stout = 0.02,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.02
-    lgd_antibodies_150_traits_emaciated = -0.02,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_veryUnderweight = -0.01,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_underweight = -0.005,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.01
-    lgd_antibodies_150_traits_overweight = -0.005,
-    -- Minimum=-1.00 Maximum=1.00 Default=-0.02
-    lgd_antibodies_150_traits_obese = -0.02,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.00
-    lgd_antibodies_150_traits_lucky = 0.0,
-    -- Minimum=-1.00 Maximum=1.00 Default=0.00
-    lgd_antibodies_150_traits_unlucky = 0.0,
-    lgd_antibodies_150_debug_enabled = false,
-    lgd_antibodies_150_debug_wounds = false,
-    lgd_antibodies_150_debug_infections = false,
-    lgd_antibodies_150_debug_hygiene = false,
-    lgd_antibodies_150_debug_moodles = false,
-    lgd_antibodies_150_debug_traits = false,
+    -- Minimum=0.00 Maximum=300.00 Default=180.00
+    lgd_antibodies_1_80_general_baseAntibodyGrowth = 180.0,
+    -- Minimum=-300.00 Maximum=300.00 Default=0.00
+    lgd_antibodies_1_80_general_knoxInfectionsSurvivedEffect = 0.0,
+    -- Minimum=0.00 Maximum=300.00 Default=100.00
+    lgd_antibodies_1_80_general_knoxInfectionsSurvivedThreshold = 100.0,
+    -- Minimum=-300.00 Maximum=300.00 Default=0.00
+    lgd_antibodies_1_80_general_knoxMutationEffect = 0.0,
+    -- Minimum=0.00 Maximum=300.00 Default=100.00
+    lgd_antibodies_1_80_general_knoxMutationThreshold = 100.0,
+    lgd_antibodies_1_80_general_knoxMutationStart = 2,
+    lgd_antibodies_1_80_general_hygienePanelEnabled = true,
+    lgd_antibodies_1_80_general_diagnoseEnabled = true,
+    -- Minimum=0 Maximum=10 Default=2
+    lgd_antibodies_1_80_general_diagnoseSkillNeeded = 2,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    lgd_antibodies_1_80_general_doctorSkillTreatmentMod = 1.0,
+    lgd_antibodies_1_80_general_debug = false,
+    -- Minimum=-100.00 Maximum=100.00 Default=5.00
+    lgd_antibodies_1_80_condition_fitness = 5.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=5.00
+    lgd_antibodies_1_80_condition_strength = 5.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-10.00
+    lgd_antibodies_1_80_condition_fatigue = -10.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-10.00
+    lgd_antibodies_1_80_condition_endurance = -10.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-20.00
+    lgd_antibodies_1_80_condition_weight = -20.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-20.00
+    lgd_antibodies_1_80_condition_thirst = -20.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-10.00
+    lgd_antibodies_1_80_condition_sickness = -10.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-10.00
+    lgd_antibodies_1_80_condition_foodSickness = -10.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=20.00
+    lgd_antibodies_1_80_condition_temperature = 20.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=10.00
+    lgd_antibodies_1_80_condition_drunkness = 10.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-20.00
+    lgd_antibodies_1_80_condition_hunger = -20.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-5.00
+    lgd_antibodies_1_80_condition_pain = -5.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-5.00
+    lgd_antibodies_1_80_condition_stress = -5.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-5.00
+    lgd_antibodies_1_80_condition_unhappiness = -5.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-1.00
+    lgd_antibodies_1_80_condition_boredom = -1.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=-5.00
+    lgd_antibodies_1_80_condition_panic = -5.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=0.00
+    lgd_antibodies_1_80_condition_sanity = 0.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=0.00
+    lgd_antibodies_1_80_condition_anger = 0.0,
+    -- Minimum=-100.00 Maximum=100.00 Default=0.00
+    lgd_antibodies_1_80_condition_fear = 0.0,
+    -- Minimum=0.00 Maximum=10.00 Default=0.25
+    lgd_antibodies_1_80_wounds_bandaged = 0.25,
+    -- Minimum=0.00 Maximum=10.00 Default=0.25
+    lgd_antibodies_1_80_wounds_cleanBandage = 0.25,
+    -- Minimum=0.00 Maximum=10.00 Default=0.25
+    lgd_antibodies_1_80_wounds_sterilizedBandage = 0.25,
+    -- Minimum=0.00 Maximum=10.00 Default=0.25
+    lgd_antibodies_1_80_wounds_sterilizedWound = 0.25,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    lgd_antibodies_1_80_wounds_garlic = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=0.50
+    lgd_antibodies_1_80_wounds_plantain = 0.5,
+    -- Minimum=0.00 Maximum=10.00 Default=0.25
+    lgd_antibodies_1_80_wounds_comfrey = 0.25,
+    -- Minimum=-10.00 Maximum=0.00 Default=-4.00
+    lgd_antibodies_1_80_wounds_deepWounded = -4.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-4.00
+    lgd_antibodies_1_80_wounds_bleeding = -4.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-3.00
+    lgd_antibodies_1_80_wounds_bitten = -3.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-2.00
+    lgd_antibodies_1_80_wounds_cut = -2.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-1.00
+    lgd_antibodies_1_80_wounds_scratched = -1.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-2.00
+    lgd_antibodies_1_80_wounds_burnt = -2.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-3.00
+    lgd_antibodies_1_80_wounds_needBurnWash = -3.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-1.00
+    lgd_antibodies_1_80_wounds_stiched = -1.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-3.00
+    lgd_antibodies_1_80_wounds_haveBullet = -3.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-2.00
+    lgd_antibodies_1_80_wounds_haveGlass = -2.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-1.00
+    lgd_antibodies_1_80_infections_regular = -1.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-2.00
+    lgd_antibodies_1_80_infections_virusScratch = -2.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-3.00
+    lgd_antibodies_1_80_infections_virusCut = -3.0,
+    -- Minimum=-10.00 Maximum=0.00 Default=-4.00
+    lgd_antibodies_1_80_infections_virusBite = -4.0,
+    -- Minimum=-100.00 Maximum=0.00 Default=-20.00
+    lgd_antibodies_1_80_hygiene_bloodEffect = -20.0,
+    -- Minimum=-100.00 Maximum=0.00 Default=-10.00
+    lgd_antibodies_1_80_hygiene_dirtEffect = -10.0,
+    -- Minimum=0.00 Maximum=1.00 Default=0.25
+    lgd_antibodies_1_80_hygiene_bandaged = 0.25,
+    -- Minimum=0.00 Maximum=1.00 Default=0.25
+    lgd_antibodies_1_80_hygiene_cleanBandage = 0.25,
+    -- Minimum=0.00 Maximum=1.00 Default=0.25
+    lgd_antibodies_1_80_hygiene_sterilizedBandage = 0.25,
+    -- Minimum=0.00 Maximum=1.00 Default=0.25
+    lgd_antibodies_1_80_hygiene_sterilizedWound = 0.25,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.80
+    lgd_antibodies_1_80_hygiene_deepWounded = -0.8,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.60
+    lgd_antibodies_1_80_hygiene_bleeding = -0.6,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.40
+    lgd_antibodies_1_80_hygiene_bitten = -0.4,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.20
+    lgd_antibodies_1_80_hygiene_cut = -0.2,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.10
+    lgd_antibodies_1_80_hygiene_scratched = -0.1,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.40
+    lgd_antibodies_1_80_hygiene_burnt = -0.4,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.60
+    lgd_antibodies_1_80_hygiene_needBurnWash = -0.6,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.10
+    lgd_antibodies_1_80_hygiene_stiched = -0.1,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.60
+    lgd_antibodies_1_80_hygiene_haveBullet = -0.6,
+    -- Minimum=-10.00 Maximum=0.00 Default=-0.40
+    lgd_antibodies_1_80_hygiene_haveGlass = -0.4,
     Map = {
         AllowMiniMap = true,
         AllowWorldMap = true,
@@ -912,15 +894,36 @@ SandboxVars = {
         BoolHNTammo = true,
         BoolSURammo = true,
     },
+    RestoreUtilities = {
+        -- Minimum=0 Maximum=11 Default=2
+        MinSkillLvl = 2,
+        -- Minimum=0.10 Maximum=10.00 Default=1.00
+        ScalingRepairModifier = 1.0,
+        -- Minimum=10 Maximum=1000 Default=40
+        ScrapNeeded = 40,
+        -- Minimum=0 Maximum=150 Default=80
+        FailChance = 80,
+        -- Minimum=0 Maximum=150 Default=110
+        InjuryChance = 110,
+        -- Minimum=0 Maximum=3000 Default=250
+        XPEarned = 250,
+        ScrapSpawnRateChest = 4,
+        T1SpawnRateChest = 4,
+        T2SpawnRateChest = 4,
+        ScrapSpawnRateZombie = 4,
+        T1SpawnRateZombie = 4,
+        T2SpawnRateZombie = 4,
+    },
     SaveOurStationCore = {
         RequirePowerShutoff = true,
-        EnableInterruptions = false,
         EnableFaults = true,
+        EnableInterruptions = false,
         ReliabilityProfile = 1,
         TimeDurationMultiplier = 3,
-    },
-    DAMN = {
-        AllowPowerChadSpawns = true,
+        OmitDiagnosticCode = false,
+        OmitShutdownTime = false,
+        OmitLocation = false,
+        EnableDebugging = false,
     },
     RespawnInCarMod = {
         ForceToRespawnInCarEvenIfNewPlayer = false,
@@ -941,12 +944,15 @@ SandboxVars = {
         WorksBothWays = false,
     },
     ScreecherZ = {
+        DayOnly = false,
+        NightOnly = false,
         -- Minimum=1 Maximum=100 Default=100
         ScreechChance = 95,
         -- Minimum=1 Maximum=36000 Default=15
         TickRate = 15,
-        DayOnly = false,
-        NightOnly = false,
+        AlertNearbyZombies = true,
+        -- Minimum=0 Maximum=300 Default=21
+        AlertRadius = 21,
     },
     BetterBatteries = {
         -- Minimum=0.00 Maximum=1440.00 Default=60.00
@@ -1014,23 +1020,38 @@ SandboxVars = {
         AlwaysUnarmed = false,
     },
     BTSE = {
+        UseRevisedFilePaths = false,
+        MakeMDContainersUnbreakable = true,
+        UseBaseTimerQueue = true,
+        -- Minimum=0.00 Maximum=60.00 Default=1.00
+        BufferSquareLoadHandlers = 1.0,
+        AllowBTSEContext = false,
         LogMovableActions = true,
         LogIllegalStatsPanelAccess = true,
         -- Minimum=1.00 Maximum=100.00 Default=40.00
         FattyMaxWeight = 40.0,
         FattyWearTranslationList = "ContextMenu_Wear",
         FattyActionTranslationList = "ContextMenu_ForwardCap;ContextMenu_ReverseCap;ContextMenu_FannyPack_WearFront;ContextMenu_FannyPack_WearBack;ContextMenu_UpHoodie;ContextMenu_DownHoodie;ContextMenu_EyeRight;ContextMenu_EyeLeft;ContextMenu_OpenJacket;ContextMenu_CloseJacket;ContextMenu_OpenHoodUp;ContextMenu_OpenHoodDown;ContextMenu_CloseHoodUp;ContextMenu_CloseHoodDown;ContextMenu_TuckIn;ContextMenu_TuckOut;ContextMenu_RollUp;ContextMenu_RollDown;ContextMenu_OpenRollUp;ContextMenu_OpenRollDown;ContextMenu_CloseRollUp;ContextMenu_CloseRollDown;ContextMenu_TieOnWaist",
+        DisableRipClothingFav = true,
+        -- Minimum=0 Maximum=100 Default=0
+        BagceptionNestingLevel = 0,
         LogVehiclePartInstalls = false,
-        -- Minimum=1 Maximum=180 Default=60
+        -- Minimum=1 Maximum=180 Default=30
         AFKKickTimeMins = 60,
         SafezoneBtnModPlus = false,
+        SafehouseUIGMPlus = false,
         RestrictFMemberCount = false,
         -- Minimum=1 Maximum=100 Default=10
         DefaultFMemberCount = 10,
         IndividualFMemberCount = "",
         ClaimSHCoordsBlacklist = "",
+        HideScoreboardForUsers = false,
+        -- Minimum=0.00 Maximum=1.00 Default=0.00
+        UnseenVehicleAlpha = 0.0,
     },
     PARP = {
+        UseRPNameIfPossible = true,
+        OverrideUsernameInSay = false,
         LogHideDebugAdminBtns = true,
         LogStaffItemSpawns = false,
         DetectAndHideDebugAdminBtns = false,
@@ -1117,6 +1138,9 @@ SandboxVars = {
         ContinueScheduling = true,
         ContinueSchedulingLateGameOnly = false,
         WeatherImpactsEvents = true,
+        -- Minimum=0.00 Maximum=1000.00 Default=1.00
+        CrashChanceMulti = 1.0,
+        AirRaidSirenEvent = true,
         Frequency_jet = 3,
         Frequency_police = 3,
         Frequency_news_chopper = 3,
@@ -1138,33 +1162,29 @@ SandboxVars = {
         BarrelRandomQuantityPercent = 0.5,
         BarrelCanPickupFull = false,
     },
+    FunctionalAppliances = {
+        BeerKegsChance = 3,
+        BeerKegsFilledAmount = 3,
+        SyrupsChance = 3,
+        SyrupsFilledAmount = 3,
+        FATheatreChance = 3,
+        FAFreshTheatreChance = 3,
+        FADeepFryerOil = 3,
+        FAZombieItemsSpawn = true,
+        FAPayPhonesAttractZombies = true,
+        FASapphsCookingTheatreChance = 3,
+        FASapphsCookingFreshTheatreChance = 3,
+        FACCSTheatreChance = 3,
+        FA24HRWallClocks = false,
+        FAEnableSiloGenerators = true,
+        FAGeneratorMagazineSpawnChance = 3,
+        FAAutoPowerOnChance = 3,
+        FAFuelTankFilledAmount = 5,
+        FAConditionAmount = 5,
+    },
     GameNight = {
         DisplayItemNames = true,
         DisplayPlayerCursors = true,
-    },
-    Text = {
-        DividerMusic = false,
-        DividerDancing = false,
-        DividerMeditation = false,
-        DividerDebug = false,
-    },
-    Music = {
-        StrengthMultiplier = 2,
-    },
-    Dancing = {
-        StrengthMultiplier = 2,
-    },
-    Meditation = {
-        StrengthMultiplier = 2,
-        MindfulnessDuration = 2,
-        -- Minimum=0.00 Maximum=10.00 Default=2.00
-        HealFactor = 2.0,
-        EffectMultiplier = 2,
-    },
-    Debug = {
-        MoodlePriority = false,
-        Expressions = false,
-        DanceAnim = false,
     },
     Hydrocraft = {
         SpawnHydrocraftGuns = false,
@@ -1204,6 +1224,50 @@ SandboxVars = {
         PredefinedChannels = "0.2;Public Chat (Mil)|25.0;Public Chat",
         -- Minimum=1 Maximum=4 Default=1
         DefaultColor = 1,
+    },
+    LSComfort = {
+        -- Minimum=0.00 Maximum=3.00 Default=1.00
+        ComfortNeedMultiplier = 1.0,
+    },
+    Text = {
+        DividerMusicNew = true,
+        DividerDancingNew = true,
+        DividerMeditationNew = true,
+        DividerHygiene = true,
+        DividerDebug = false,
+    },
+    Music = {
+        StrengthMultiplier = 2,
+        ListeningStrengthMultiplier = 2,
+        LearningChance = 3,
+    },
+    Dancing = {
+        StrengthMultiplier = 2,
+    },
+    Meditation = {
+        StrengthMultiplier = 2,
+        MindfulnessDuration = 2,
+        -- Minimum=0.00 Maximum=10.00 Default=2.00
+        HealFactor = 2.0,
+        EffectMultiplier = 2,
+    },
+    LSMeditation = {
+        RemoveLevitation = false,
+    },
+    LSHygiene = {
+        -- Minimum=0.00 Maximum=3.00 Default=1.00
+        HygieneNeedMultiplier = 1.0,
+        -- Minimum=0.00 Maximum=3.00 Default=1.00
+        BladderNeedMultiplier = 1.0,
+        HygieneNeedExpectationTime = 2,
+        CleaningExpectationTime = 2,
+        CleaningLitterChance = 3,
+        CleansMakeup = true,
+    },
+    Debug = {
+        MoodlePriority = false,
+        Expressions = false,
+        DanceAnim = false,
     },
     MoreBrews = {
         Loot = 1,
@@ -1399,9 +1463,19 @@ SandboxVars = {
         -- Minimum=0.00 Maximum=1.00 Default=0.00
         messageColorBlue = 0.0,
     },
+    Plumbing = {
+        -- Minimum=0.00 Maximum=100.00 Default=0.01
+        PumpFilterUsage = 0.014,
+        -- Minimum=0.00 Maximum=100.00 Default=0.00
+        PumpEfficiencyLoss = 0.004,
+        -- Minimum=1 Maximum=100 Default=12
+        PumpMaxWater = 12,
+    },
     SapphCooking = {
         NonPerishableChance = 3,
         PerishableChance = 3,
+        SpicesSpawnChance = 3,
+        CannedSpawnChance = 3,
         MagazineChance = 3,
         MREChance = 3,
         KitchenUtensilsChance = 3,
@@ -1457,20 +1531,28 @@ SandboxVars = {
         -- Minimum=1 Maximum=100 Default=100
         RecoveryPercentage = 100,
         -- Minimum=0.00 Maximum=1000.00 Default=1.00
-        TranscribeSpeed = 2.5,
+        TranscribeSpeed = 1.0,
         -- Minimum=0.00 Maximum=1000.00 Default=1.00
-        ReadTimeSpeed = 2.5,
+        ReadTimeSpeed = 1.0,
         RecoverProfessionAndTraitsBonuses = false,
         TranscribeTVXP = false,
-        RecoverPassiveSkills = false,
-        RecoverCombatSkills = true,
-        RecoverFirearmSkills = true,
-        RecoverCraftingSkills = true,
-        RecoverSurvivalistSkills = true,
-        RecoverAgilitySkills = true,
+        -- Minimum=-1 Maximum=100 Default=0
+        RecoverPassiveSkills = 0,
+        -- Minimum=-1 Maximum=100 Default=-1
+        RecoverCombatSkills = -1,
+        -- Minimum=-1 Maximum=100 Default=-1
+        RecoverFirearmSkills = -1,
+        -- Minimum=-1 Maximum=100 Default=-1
+        RecoverCraftingSkills = -1,
+        -- Minimum=-1 Maximum=100 Default=-1
+        RecoverSurvivalistSkills = -1,
+        -- Minimum=-1 Maximum=100 Default=-1
+        RecoverAgilitySkills = -1,
         RecoverRecipes = true,
         RecoveryJournalUsed = false,
         Craftable = true,
+        -- Minimum=0 Maximum=100 Default=0
+        KillsTrack = 0,
     },
     UdderlySafeLogin = {
         -- Minimum=1.00 Maximum=120.00 Default=20.00
